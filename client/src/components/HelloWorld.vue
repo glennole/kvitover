@@ -29,7 +29,7 @@
         xs12
       >
         <h2 class="headline font-weight-bold mb-3">What's next?</h2>
-
+<input type="file" accept="image/*" capture="camera" />
         <v-layout justify-center>
           <a
             v-for="(next, i) in whatsNext"

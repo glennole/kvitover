@@ -1,0 +1,16 @@
+FROM node:latest as build-stage
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY ./ .
+RUN npm run build
+
+FROM nginx as production-stage
+RUN mkdir /app
+RUN mkdir /app_config
+COPY --from=build-stage /app/dist /app
+COPY .env.production /app_config
+RUN mv /app_config/.env.production /app_config/env_variables
+COPY entrypoint.sh /app_config
+COPY default.conf /etc/nginx/conf.d/default.conf
+CMD ["nginx", "-g", "daemon off;"]
