@@ -20,9 +20,5 @@ cp /usr/share/nginx/html/index.html /usr/share/nginx/html/index.html.tmp
 envsubst '$VUE_APP_SUB_PATH' < /usr/share/nginx/html/index.html.tmp > /usr/share/nginx/html/index.html
 rm /usr/share/nginx/html/index.html.tmp
 
-#echo "Replacing env vars in index.html"
-#envsubst '$VUE_APP_BASE_URL' < /usr/share/nginx/html/abaxdashboard/index.html > /usr/share/nginx/html/abaxdashboard/index.html.tmp
-#mv /usr/share/nginx/html/abaxdashboard/index.html.tmp /usr/share/nginx/html/abaxdashboard/index.html
-
 echo "Starting Nginx"
 nginx -g 'daemon off;'

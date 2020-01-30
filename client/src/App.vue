@@ -220,9 +220,6 @@
                   <v-form>
                     <h3>Velkommen til KvitOver!</h3>
                     <p>Applikasjonen som holder orden på alle dine kvitteringer.</p>
-                    <p>Login: {{ loginUrl }}</p>
-                    <p>Logout: {{ logoutUrl }}</p>
-                    <p>Base: {{ baseSubPathUrl }}</p>
                   </v-form>
                 </v-card-text>
                 <v-card-actions>
@@ -255,9 +252,6 @@ export default {
     source: String,
   },
   data: () => ({
-    loginUrl: process.env.VUE_APP_LOGIN_REDIRECT_URL,
-    logoutUrl: process.env.VUE_APP_LOGOUT_REDIRECT_URL,
-    baseSubPathUrl: process.env.VUE_APP_SUB_PATH,
     dialog: false,
     drawer: null,
     items: [
